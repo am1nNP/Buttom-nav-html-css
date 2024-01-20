@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #0F1035;
+}
+
+.container{
+    /* position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+}
+
+.box{
+    width: 36rem;
+    height: 5rem;
+    background-color: #EEF5FF;
+    border-radius: 20px 20px 10px 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    
+}
+
+.box label{
+    width: 7rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.box label i{
+    font-size: 2.5rem;
+    color: #365486;
+    position: relative;
+    z-index: 10;
+    
+}
+
+.box input:checked + label::before{
+    content: "";
+    background-color: #365486;
+    color: #EEF5FF;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    position: absolute;
+    z-index: 5;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    
+}
+
+.box input:checked + label i{
+    color: #EEF5FF;
+    
+}
+
+.box  label::after{
+    content: "";
+    position: absolute;
+    width: 9rem;
+    height: 9rem;
+    background-color: #EEF5FF;
+    border-radius: 100%;
+    z-index: 1;
+    top: 0;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    
+}
+
+.box input:checked + label::after{
+    top: -30px;
+}
+
+.box input:checked + label{
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transform: translateY(-8px);
+    -webkit-transform: translateY(-8px);
+    -moz-transform: translateY(-8px);
+    -ms-transform: translateY(-8px);
+    -o-transform: translateY(-8px);
+    
+}
+
+@media screen and (max-width:530px) {
+    .box{
+        width: 26rem;
+    }
+    .box label i {
+        font-size: 1.3rem;
+    }
+    .box label {
+        width: 4rem;
+        height: 4rem;
+    }
+    .box label::after {
+        width: 5rem;
+        height: 5rem;
+    } 
+    .box input:checked + label::after {
+        top: -19px;
+    }  
+}
